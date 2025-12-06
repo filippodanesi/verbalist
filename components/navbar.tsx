@@ -58,8 +58,13 @@ export function Navbar() {
               onMouseLeave={() => setIsFeaturesOpen(false)}
             >
               <DropdownMenu open={isFeaturesOpen} onOpenChange={setIsFeaturesOpen} modal={false}>
-                <DropdownMenuTrigger className="text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors outline-none cursor-pointer">
-                  Funzionalità
+                <DropdownMenuTrigger asChild>
+                  <Link 
+                    href="/funzionalita"
+                    className="text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors outline-none cursor-pointer"
+                  >
+                    Funzionalità
+                  </Link>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
                   align="end" 
@@ -67,6 +72,9 @@ export function Navbar() {
                   className="w-56"
                   onCloseAutoFocus={(e) => e.preventDefault()}
                 >
+                  <DropdownMenuItem onClick={() => handleLinkClick("/funzionalita")}>
+                    Panoramica
+                  </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => handleLinkClick("/funzionalita/analisi-serp")}>
                     Analisi SERP
                   </DropdownMenuItem>

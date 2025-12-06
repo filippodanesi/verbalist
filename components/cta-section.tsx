@@ -15,19 +15,19 @@ export function CTASection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link
-              href="#"
+              href="/contatti"
               className="inline-flex items-center gap-2 text-[15px] bg-white text-neutral-900 px-6 py-3 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
             >
-              Prova gratis
+              Prenota una demo
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
-              href="/contatti"
+              href="/funzionalita"
               className="text-[15px] text-neutral-300 hover:text-white transition-colors font-medium"
             >
-              Contattaci →
+              Scopri il prodotto →
             </Link>
           </div>
 
