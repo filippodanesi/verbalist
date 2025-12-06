@@ -13,7 +13,7 @@ const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["20
 
 // <CHANGE> Updated metadata for Verbalist 2.0
 export const metadata: Metadata = {
-  title: "Verbalist 2.0 | SEO Automation Powered by AI",
+  title: "Verbalist 2.0 — SEO Automation Powered by AI",
   description:
     "Piattaforma intelligente per l'ottimizzazione SEO automatizzata. Analisi SERP, generazione contenuti e ottimizzazione data-driven.",
   generator: "v0.app",

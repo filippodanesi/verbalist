@@ -25,7 +25,6 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-neutral max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-4">INFORMATIVA PRIVACY SITO WEB</h2>
               <p className="text-[15px] text-neutral-700 leading-relaxed mb-4">
                 La presente informativa (di seguito, "Informativa Privacy") è relativa al trattamento dei tuoi dati personali (di seguito, i "Dati Personali") effettuato da NUR S.r.l., con sede legale in San Giorgio Bigarello (MN), Via del Commercio 1/N, P.IVA 01902640208, e-mail info@nur.it (di seguito, "NUR" o il "Titolare"), anche in conformità al Regolamento UE 2016/679 (di seguito "GDPR").
               </p>
