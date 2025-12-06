@@ -60,80 +60,61 @@ const executors = [
   },
 ]
 
+const processSteps = [
+  {
+    number: "1",
+    title: "Keyword",
+    description: "Inserisci la keyword target",
+  },
+  {
+    number: "2",
+    title: "Analisi SERP",
+    description: "Recuperiamo e analizziamo i top 10 risultati Google",
+  },
+  {
+    number: "3",
+    title: "Pattern extraction",
+    description: "L'AI identifica struttura, topic e trust signals dei competitor",
+  },
+  {
+    number: "4",
+    title: "Contenuto ottimizzato",
+    description: "Generiamo o miglioriamo il tuo contenuto con dati reali",
+  },
+]
+
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24">
+    <section id="features" className="py-24 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 mb-4">
-            Ottimizzazione per SEO, AEO, GEO e AI
+        {/* PROCESSO */}
+        <div className="mb-24">
+          <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 mb-12 text-center">
+            Come funziona
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Verbalist genera contenuti ottimizzati per ogni tipo di ricerca: Google tradizionale, risposte dirette, motori generativi e assistenti AI.
-          </p>
-        </div>
 
-        <div className="space-y-24 mb-16">
-          {[
-            {
-              title: "SEO: contenuti che competono per le prime posizioni",
-              description:
-                "Analizza i top 10 risultati Google per la tua keyword e replica i pattern vincenti: struttura heading ottimale, word count medio, topic coverage completo. Ogni contenuto è progettato per competere nelle prime posizioni organiche.",
-              benefit: "Ranking organico",
-            },
-            {
-              title: "AEO: ottimizzazione per risposte dirette",
-              description:
-                "Struttura contenuti per essere selezionati come risposte dirette nei motori di ricerca. Analisi dei featured snippets e ottimizzazione per domande specifiche. Contenuti che rispondono direttamente alle query degli utenti.",
-              benefit: "Featured snippets",
-            },
-            {
-              title: "GEO: contenuti per motori generativi",
-              description:
-                "Ottimizzazione per motori di ricerca generativi che creano risposte sintetiche. Contenuti strutturati, citabili e autorevoli che gli AI possono trovare, comprendere e utilizzare nelle loro risposte.",
-              benefit: "AI search ready",
-            },
-            {
-              title: "AI: trovabilità nei chatbot e assistenti",
-              description:
-                "Contenuti che gli assistenti AI possono trovare e citare. Struttura semantica chiara, segnali di autorevolezza e formattazione ottimizzata per essere inclusi nelle risposte di ChatGPT, Claude, Perplexity e altri.",
-              benefit: "AI discoverable",
-            },
-          ].map((feature, index) => (
-            <div key={feature.title} className="grid md:grid-cols-2 gap-16 items-center">
-              <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                <div className="inline-block text-xs font-medium text-neutral-400 bg-neutral-100 px-3 py-1 rounded-full mb-4">
-                  {feature.benefit}
-                </div>
-                <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-4 text-balance leading-tight">
-                  {feature.title}
-                </h3>
-                <p className="text-[16px] text-neutral-600 leading-relaxed">{feature.description}</p>
-              </div>
-
-              <div className={`bg-neutral-50 rounded-xl border border-neutral-200 aspect-[4/3] ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                <div className="w-full h-full flex items-center justify-center p-8">
-                  <div className="text-center w-full">
-                    <div className="w-16 h-16 rounded-xl bg-neutral-200 mx-auto mb-6" />
-                    <div className="h-3 w-48 bg-neutral-200 rounded mx-auto mb-3" />
-                    <div className="h-3 w-36 bg-neutral-200 rounded mx-auto" />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 relative">
+            {processSteps.map((step, index) => (
+              <div key={step.number} className="relative">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-neutral-900 text-white flex items-center justify-center text-lg font-medium mb-4 relative z-10">
+                    {step.number}
                   </div>
+                  <h3 className="text-lg font-medium text-neutral-900 mb-2">{step.title}</h3>
+                  <p className="text-sm text-neutral-600">{step.description}</p>
                 </div>
+                {index < processSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-6 left-[calc(50%+24px)] w-[calc(100%-48px)] h-0.5 bg-neutral-300 z-0">
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-l-[6px] border-l-neutral-300 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <div className="mt-24 border-t border-b border-neutral-200 pt-16 pb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-medium text-neutral-900 mb-4">
-              Come funziona il sistema
-            </h3>
-            <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto">
-              Ogni step del processo è progettato per ottimizzare i contenuti per SEO, AEO, GEO e AI search.
-            </p>
-          </div>
-
+        {/* ACCORDION */}
+        <div className="mb-24">
           <Accordion type="single" collapsible className="w-full space-y-4">
             {executors.map((executor) => (
               <div key={executor.id} id={executor.id} className="scroll-mt-24">
@@ -141,41 +122,120 @@ export function FeaturesSection() {
                   value={executor.id}
                   className="border border-neutral-200 last:!border-b last:!border-b-neutral-200 rounded-lg px-6 bg-white"
                 >
-                <AccordionTrigger className="hover:no-underline py-6">
-                  <div className="text-left flex-1">
-                    <div className="text-[15px] font-medium text-neutral-900 mb-1">{executor.name}</div>
-                    <div className="text-[14px] text-neutral-600">{executor.description}</div>
-                    <div className="text-[13px] text-neutral-500 mt-1">{executor.seoFocus}</div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <div className="space-y-6 pt-4 border-t border-neutral-100">
-                    <div>
-                      <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                        Cosa fa
-                      </div>
-                      <div className="text-[14px] text-neutral-700">{executor.details.what}</div>
+                  <AccordionTrigger className="hover:no-underline py-6">
+                    <div className="text-left flex-1">
+                      <div className="text-[15px] font-medium text-neutral-900 mb-1">{executor.name}</div>
+                      <div className="text-[14px] text-neutral-600">{executor.description}</div>
+                      <div className="text-[13px] text-neutral-500 mt-1">{executor.seoFocus}</div>
                     </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <div className="space-y-6 pt-4 border-t border-neutral-100">
+                      <div>
+                        <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
+                          Cosa fa
+                        </div>
+                        <div className="text-[14px] text-neutral-700">{executor.details.what}</div>
+                      </div>
 
-                    <div>
-                      <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                        Perché è importante
+                      <div>
+                        <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
+                          Perché è importante
+                        </div>
+                        <div className="text-[14px] text-neutral-700">{executor.details.why}</div>
                       </div>
-                      <div className="text-[14px] text-neutral-700">{executor.details.why}</div>
-                    </div>
 
-                    <div>
-                      <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
-                        Risultato
+                      <div>
+                        <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-3">
+                          Risultato
+                        </div>
+                        <div className="text-[14px] text-neutral-700">{executor.details.output}</div>
                       </div>
-                      <div className="text-[14px] text-neutral-700">{executor.details.output}</div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionContent>
+                </AccordionItem>
               </div>
             ))}
           </Accordion>
+        </div>
+
+        {/* USE CASES */}
+        <div>
+          <h2 className="text-3xl md:text-4xl font-medium text-neutral-900 mb-12 text-center">
+            Genera o ottimizza
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Card 1: Genera contenuto */}
+            <div className="bg-white border border-neutral-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-medium text-neutral-900 mb-2">Genera contenuto</h3>
+              <p className="text-sm text-neutral-500 mb-4">Crea da zero, basandoti sui competitor</p>
+              <p className="text-[15px] text-neutral-600 mb-6">
+                Parti da una keyword e ottieni un contenuto completo, strutturato per rankare.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">SEO metadata (title, meta description, slug)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Outline con heading H1-H3</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Contenuto completo (Markdown o HTML)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Suggerimenti media con alt text</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Ottimizza contenuto */}
+            <div className="bg-white border border-neutral-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-medium text-neutral-900 mb-2">Ottimizza contenuto</h3>
+              <p className="text-sm text-neutral-500 mb-4">Migliora quello che hai già</p>
+              <p className="text-[15px] text-neutral-600 mb-6">
+                Carica un contenuto esistente e ricevi analisi + versione migliorata.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Score 0-100 (SEO, leggibilità, completezza, trust)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Issue identificate per severità</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Improvement prioritizzati</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-sm text-neutral-700">Contenuto riscritto e ottimizzato</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

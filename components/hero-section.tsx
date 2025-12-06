@@ -2,16 +2,15 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="pt-32 pb-16">
+    <section className="pt-32 pb-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-medium text-neutral-900 mb-6 tracking-tight leading-tight">
-            Build content that <span className="text-neutral-600">AI can find</span> and rank
+        {/* HERO */}
+        <div className="mb-20 text-center max-w-3xl mx-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium text-neutral-900 mb-6 tracking-tight leading-tight">
+            I tuoi competitor rankano. Tu indovini.
           </h1>
-          <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
-            Verbalist analizza i competitor che dominano Google e genera contenuti ottimizzati per SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization) e AI search.
-            <br className="hidden md:block" />
-            <span className="text-neutral-500">Da keyword a contenuto completo ottimizzato in 5 minuti.</span>
+          <p className="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+            Contenuti ottimizzati per SEO, AEO e GEO — generati dall'analisi reale dei top 10 in SERP, non dall'immaginazione di un LLM.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -19,16 +18,10 @@ export function HeroSection() {
               href="#"
               className="inline-flex items-center gap-2 text-[15px] bg-neutral-900 text-white px-8 py-3 rounded-full hover:bg-neutral-800 transition-colors font-medium"
             >
-              Inizia gratis - nessuna carta richiesta
+              Prova Verbalist
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
-            <Link
-              href="#features"
-              className="text-[15px] text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              Scopri come funziona →
             </Link>
           </div>
 
@@ -54,64 +47,51 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-2xl border border-neutral-200 p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="text-sm font-medium text-neutral-500 mb-4">Cosa ottieni</div>
-                <h3 className="text-xl font-medium text-neutral-900 mb-3">
-                  Contenuti ottimizzati per ogni tipo di ricerca
-                </h3>
-                <div className="space-y-3 text-[15px] text-neutral-600">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span><strong>SEO:</strong> Title tag, meta description, struttura heading ottimizzata</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span><strong>AEO:</strong> Contenuti strutturati per risposte dirette nei motori di ricerca</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span><strong>GEO:</strong> Ottimizzazione per motori generativi e AI search</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span><strong>AI:</strong> Contenuti che gli assistenti AI possono trovare e citare</span>
-                  </div>
-                </div>
+        {/* PILLAR */}
+        <div className="mt-24">
+          <p className="text-center text-lg text-neutral-600 mb-12 max-w-2xl mx-auto">
+            Analisi SERP automatizzata per contenuti che rankano
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
               </div>
-              <div className="bg-white rounded-lg border border-neutral-200 p-6 shadow-sm">
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-xs text-neutral-400 mb-1">Keyword inserita</div>
-                    <div className="text-[15px] font-medium text-neutral-900">migliori crm 2025</div>
-                  </div>
-                  <div className="h-px bg-neutral-200" />
-                  <div>
-                    <div className="text-xs text-neutral-400 mb-1">Risultato</div>
-                    <div className="text-[15px] text-neutral-700">
-                      Articolo completo di 2.500+ parole con struttura ottimizzata, pronto per competere nelle prime posizioni Google.
-                    </div>
-                  </div>
-                  <div className="pt-2">
-                    <div className="inline-flex items-center gap-2 text-xs text-green-600 bg-green-50 px-3 py-1.5 rounded-full">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      Completato in 4 minuti
-                    </div>
-                  </div>
-                </div>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Data-driven</h3>
+              <p className="text-sm text-neutral-600">Analizza i top 10 competitor reali per ogni keyword</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
               </div>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Multi-formato</h3>
+              <p className="text-sm text-neutral-600">Blog post, landing page, schede prodotto, guide</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">SEO + AEO + GEO</h3>
+              <p className="text-sm text-neutral-600">Ottimizzato per Google, risposte AI e motori generativi</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Output completo</h3>
+              <p className="text-sm text-neutral-600">Title, meta, outline, body e suggerimenti media</p>
             </div>
           </div>
         </div>

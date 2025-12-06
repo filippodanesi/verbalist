@@ -7,11 +7,8 @@ export function CTASection() {
         <h2 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-6 tracking-tight">
           Prova Verbalist
         </h2>
-        <p className="text-lg text-neutral-600 mb-4">
-          Sistema automatizzato per generare contenuti basati su analisi SERP reali.
-        </p>
-        <p className="text-[15px] text-neutral-500 mb-10">
-          Prova gratuita disponibile. Nessuna carta richiesta. Documentazione tecnica completa disponibile.
+        <p className="text-lg text-neutral-600 mb-10">
+          Analizza i competitor. Genera contenuti ottimizzati. In 5 minuti.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -19,7 +16,7 @@ export function CTASection() {
             href="#"
             className="inline-flex items-center gap-2 text-[16px] bg-neutral-900 text-white px-8 py-4 rounded-full hover:bg-neutral-800 transition-colors font-medium shadow-lg"
           >
-            Inizia gratis ora
+            Inizia gratis
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
