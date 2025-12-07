@@ -76,7 +76,7 @@ export function HeroSection() {
           </div>
 
           {/* Colonna destra - Visual animato */}
-          <div className="flex-none w-[500px] h-[350px]">
+          <div className="w-full md:w-[500px] md:flex-none h-[280px] md:h-[350px]">
             <HeroVisual />
           </div>
 
