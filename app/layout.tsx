@@ -4,19 +4,59 @@ import type { Metadata, Viewport } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-import { Geist, Geist_Mono, Geist as V0_Font_Geist, Geist_Mono as V0_Font_Geist_Mono, Source_Serif_4 as V0_Font_Source_Serif_4 } from 'next/font/google'
+import { Geist, Geist_Mono, Noto_Serif } from 'next/font/google'
 
 // Initialize fonts
-const _geist = V0_Font_Geist({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _geistMono = V0_Font_Geist_Mono({ subsets: ['latin'], weight: ["100","200","300","400","500","600","700","800","900"] })
-const _sourceSerif_4 = V0_Font_Source_Serif_4({ subsets: ['latin'], weight: ["200","300","400","500","600","700","800","900"] })
+const geist = Geist({
+  subsets: ['latin'],
+  weight: ["100","200","300","400","500","600","700","800","900"],
+  variable: '--font-geist',
+  display: 'swap',
+})
 
-// <CHANGE> Updated metadata for Verbalist 2.0
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  weight: ["100","200","300","400","500","600","700","800","900"],
+  variable: '--font-geist-mono',
+  display: 'swap',
+})
+
+const notoSerif = Noto_Serif({
+  subsets: ['latin'],
+  weight: ["100","200","300","400","500","600","700","800","900"],
+  style: ["normal", "italic"],
+  variable: '--font-noto-serif',
+  display: 'swap',
+})
+
+const siteUrl = "https://verbalist.it"
+
 export const metadata: Metadata = {
-  title: "Verbalist 2.0 — SEO Automation Powered by AI",
+  title: {
+    default: "Verbalist — Content Automation per SEO, AEO, GEO",
+    template: "%s — Verbalist",
+  },
   description:
-    "Piattaforma intelligente per l'ottimizzazione SEO automatizzata. Analisi SERP, generazione contenuti e ottimizzazione data-driven.",
-  generator: "v0.app",
+    "Analizza i competitor Google, estrai i pattern vincenti e genera contenuti ottimizzati per SEO, AEO e GEO. Da keyword a articolo completo in pochi minuti.",
+  keywords: [
+    "software SEO",
+    "generazione contenuti AI",
+    "SEO automation",
+    "analisi SERP",
+    "ottimizzazione contenuti",
+    "GEO optimization",
+    "AEO optimization",
+    "content marketing AI",
+    "articoli SEO",
+    "tool SEO italiano",
+  ],
+  authors: [{ name: "NUR Digital Marketing", url: "https://www.nur.it" }],
+  creator: "Verbalist",
+  publisher: "NUR Digital Marketing",
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       {
@@ -34,6 +74,45 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  // Open Graph
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    url: siteUrl,
+    siteName: "Verbalist",
+    title: "Verbalist — Content Automation per SEO, AEO, GEO",
+    description:
+      "Analizza i competitor Google, estrai i pattern vincenti e genera contenuti ottimizzati per SEO, AEO e GEO. Da keyword a articolo completo in pochi minuti.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Verbalist - Software SEO con AI per generare contenuti ottimizzati",
+      },
+    ],
+  },
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image",
+    title: "Verbalist — Content Automation per SEO, AEO, GEO",
+    description:
+      "Analizza i competitor Google, estrai i pattern vincenti e genera contenuti ottimizzati per SEO, AEO e GEO. Da keyword a articolo completo in pochi minuti.",
+    images: ["/og-image.png"],
+    creator: "@verbalist_ai",
+  },
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 // <CHANGE> Added viewport configuration for dark theme
@@ -48,7 +127,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`font-sans antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} ${notoSerif.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

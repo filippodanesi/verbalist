@@ -2,6 +2,19 @@ import Link from "next/link"
 import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Tecnologia",
+  description: "Claude, GPT-4, Gemini e DataForSEO: lo stack AI di Verbalist per analisi SERP e generazione contenuti SEO enterprise-grade.",
+  alternates: {
+    canonical: "/integrazioni",
+  },
+  openGraph: {
+    title: "Tecnologia — Verbalist",
+    description: "Claude, GPT-4, Gemini e DataForSEO: lo stack AI di Verbalist per analisi SERP e generazione contenuti SEO enterprise-grade.",
+  },
+}
 
 export default function IntegrazioniPage() {
   return (
@@ -12,14 +25,14 @@ export default function IntegrazioniPage() {
           <div className="mb-12">
             <Link
               href="/"
-              className="text-[14px] text-neutral-600 hover:text-neutral-900 inline-flex items-center gap-2 mb-8 transition-colors"
+              className="text-[14px] text-neutral-500 hover:text-neutral-900 inline-flex items-center gap-2 mb-8 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Torna alla home
             </Link>
-              <h1 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-6">
+            <h1 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 mb-6 ">
               Tecnologia
             </h1>
             <p className="text-lg text-neutral-600 leading-relaxed">
@@ -29,7 +42,7 @@ export default function IntegrazioniPage() {
 
           <div className="space-y-16">
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-6">Modelli di linguaggio (LLM)</h2>
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-6">Modelli di linguaggio (LLM)</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   {
@@ -61,7 +74,7 @@ export default function IntegrazioniPage() {
                         className="h-6 w-auto"
                       />
                     </div>
-                    <p className="text-[14px] text-neutral-600 mb-3">{llm.description}</p>
+                    <p className="text-base text-neutral-600 mb-3">{llm.description}</p>
                     <div className="text-[13px] text-neutral-500">
                       <span className="font-medium">Uso:</span> {llm.useCase}
                     </div>
@@ -71,7 +84,7 @@ export default function IntegrazioniPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-6">API e servizi esterni</h2>
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-6">API e servizi esterni</h2>
               <div className="space-y-4">
                 {[
                   {
@@ -114,7 +127,7 @@ export default function IntegrazioniPage() {
                             </span>
                           )}
                         </div>
-                        <p className="text-[14px] text-neutral-600 mb-3">{api.description}</p>
+                        <p className="text-base text-neutral-600 mb-3">{api.description}</p>
                         <div className="text-[13px] text-neutral-500 mb-3">
                           <span className="font-medium">Categoria:</span> {api.category}
                         </div>
@@ -140,91 +153,19 @@ export default function IntegrazioniPage() {
               </div>
             </section>
 
-            <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-6">Stack tecnologico</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  {
-                    category: "Backend",
-                    tech: ["Python 3.11+", "FastAPI", "SQLModel/SQLAlchemy", "Pydantic v2"],
-                  },
-                  {
-                    category: "AI & ML",
-                    tech: ["LangChain", "OpenAI SDK", "Anthropic SDK", "Google AI SDK"],
-                  },
-                  {
-                    category: "Infrastruttura",
-                    tech: ["Docker", "Kubernetes", "HTTPX (async)"],
-                  },
-                  {
-                    category: "Frontend",
-                    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-                  },
-                ].map((stack) => (
-                  <div key={stack.category} className="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
-                    <h3 className="text-[16px] font-medium text-neutral-900 mb-4">{stack.category}</h3>
-                    <ul className="space-y-2">
-                      {stack.tech.map((item) => (
-                        <li key={item} className="text-[14px] text-neutral-700 flex items-center gap-2">
-                          <span className="text-neutral-400">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="bg-neutral-900 rounded-xl p-12 text-white text-center">
-              <h2 className="text-3xl md:text-4xl font-medium mb-4">
-                Pronto a far crescere il tuo traffico organico?
+            <section className="bg-neutral-50 rounded-xl p-8 md:p-12 border border-neutral-200">
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-4">
+                Vuoi vedere Verbalist in azione?
               </h2>
-              <p className="text-lg text-neutral-300 mb-4">
-                Inizia oggi. Nessuna carta richiesta. Risultati in 5 minuti.
+              <p className="text-base text-neutral-600 mb-6 max-w-2xl">
+                Prenota una demo con il nostro team: ti mostreremo come Verbalist può automatizzare la creazione di contenuti SEO per il tuo business.
               </p>
-              <p className="text-[15px] text-neutral-400 mb-10">
-                Genera il tuo primo contenuto ottimizzato per SEO e scopri perché Verbalist è diverso dagli altri tool.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[16px] bg-white text-neutral-900 px-8 py-4 rounded-full hover:bg-neutral-100 transition-colors font-medium shadow-lg"
-                >
-                  Inizia gratis ora
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-                <Link
-                  href="#pricing"
-                  className="text-[16px] text-neutral-300 hover:text-white transition-colors font-medium"
-                >
-                  Vedi i piani →
-                </Link>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-400">
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Nessun impegno</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Cancella quando vuoi</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Supporto incluso</span>
-                </div>
-              </div>
+              <Link
+                href="/contatti"
+                className="inline-flex items-center gap-2 text-base bg-neutral-900 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
+              >
+                Prenota una demo
+              </Link>
             </section>
           </div>
         </div>

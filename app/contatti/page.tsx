@@ -10,6 +10,9 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 
+// Note: metadata export not supported in client components
+// Title/description set in layout or via head
+
 export default function ContattiPage() {
   const [formData, setFormData] = useState({
     nome: "",
@@ -41,14 +44,14 @@ export default function ContattiPage() {
           <div className="mb-12">
             <Link
               href="/"
-              className="text-[14px] text-neutral-600 hover:text-neutral-900 inline-flex items-center gap-2 mb-8 transition-colors"
+              className="text-[14px] text-neutral-500 hover:text-neutral-900 inline-flex items-center gap-2 mb-8 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Torna alla home
             </Link>
-            <h1 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-6">
+            <h1 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 mb-6">
               Prenota una demo
             </h1>
             <p className="text-lg text-neutral-600 leading-relaxed">

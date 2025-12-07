@@ -3,6 +3,19 @@ import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { ArrowRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Funzionalità",
+  description: "Analisi SERP, scraping competitor, pattern detection e generazione contenuti. Tutte le funzionalità di Verbalist per creare articoli SEO che rankano.",
+  alternates: {
+    canonical: "/funzionalita",
+  },
+  openGraph: {
+    title: "Funzionalità — Verbalist",
+    description: "Analisi SERP, scraping competitor, pattern detection e generazione contenuti. Tutte le funzionalità di Verbalist per creare articoli SEO che rankano.",
+  },
+}
 
 const funzionalita = [
   {
@@ -63,7 +76,7 @@ export default function FunzionalitaPage() {
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
           <div className="mb-12 text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-4 tracking-tight">
+            <h1 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 mb-4 ">
               Funzionalità
             </h1>
             <p className="text-lg text-neutral-600 leading-relaxed">
@@ -76,21 +89,13 @@ export default function FunzionalitaPage() {
             {funzionalita.map((funz) => (
               <Card key={funz.slug} className="border border-neutral-200 hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="w-12 h-12 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-600">
-                      {funz.icon}
-                    </div>
-                    <Link
-                      href={`/funzionalita/${funz.slug}`}
-                      className="inline-flex items-center gap-1 text-[14px] text-neutral-500 hover:text-neutral-900 transition-colors"
-                    >
-                      Dettagli <ArrowRight className="w-3 h-3" />
-                    </Link>
+                  <div className="w-12 h-12 rounded-lg bg-neutral-100 flex items-center justify-center text-neutral-600 mb-4">
+                    {funz.icon}
                   </div>
                   <CardTitle className="text-xl font-medium text-neutral-900">
                     {funz.title}
                   </CardTitle>
-                  <CardDescription className="text-[15px] text-neutral-600 leading-relaxed">
+                  <CardDescription className="text-base text-neutral-600 leading-relaxed">
                     {funz.description}
                   </CardDescription>
                 </CardHeader>
@@ -99,7 +104,7 @@ export default function FunzionalitaPage() {
                     <h3 className="text-[13px] font-medium text-neutral-500 mb-2 uppercase tracking-wide">
                       Cosa fa
                     </h3>
-                    <p className="text-[14px] text-neutral-700 leading-relaxed">
+                    <p className="text-base text-neutral-700 leading-relaxed">
                       {funz.cosa}
                     </p>
                   </div>
@@ -107,13 +112,13 @@ export default function FunzionalitaPage() {
                     <h3 className="text-[13px] font-medium text-neutral-500 mb-2 uppercase tracking-wide">
                       Risultato
                     </h3>
-                    <p className="text-[14px] text-neutral-700 leading-relaxed">
+                    <p className="text-base text-neutral-700 leading-relaxed">
                       {funz.risultato}
                     </p>
                   </div>
                   <Link
                     href={`/funzionalita/${funz.slug}`}
-                    className="inline-flex items-center gap-2 text-[14px] font-medium text-neutral-900 hover:text-neutral-600 transition-colors pt-2"
+                    className="inline-flex items-center gap-2 text-base font-medium text-neutral-900 hover:text-neutral-600 transition-colors pt-2"
                   >
                     Scopri di più <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -124,22 +129,22 @@ export default function FunzionalitaPage() {
 
           {/* CTA Section */}
           <div className="bg-neutral-50 rounded-xl p-8 md:p-12 border border-neutral-200 text-center">
-            <h2 className="text-2xl font-medium text-neutral-900 mb-4">
+            <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-4">
               Pronto a iniziare?
             </h2>
-            <p className="text-[15px] text-neutral-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-base text-neutral-600 mb-6 max-w-2xl mx-auto">
               Scopri come Verbalist può automatizzare la creazione di contenuti ottimizzati per la tua azienda.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contatti"
-                className="inline-flex items-center gap-2 text-[15px] bg-neutral-900 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
+                className="inline-flex items-center gap-2 text-base bg-neutral-900 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 transition-colors font-medium"
               >
                 Prenota una demo
               </Link>
               <Link
                 href="/prodotto"
-                className="inline-flex items-center gap-1 text-[15px] font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+                className="inline-flex items-center gap-1 text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
               >
                 Scopri il prodotto <ArrowRight className="w-4 h-4" />
               </Link>

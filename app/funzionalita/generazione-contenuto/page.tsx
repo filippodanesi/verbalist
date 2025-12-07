@@ -1,6 +1,19 @@
 import Link from "next/link"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Generazione Contenuti",
+  description: "Genera articoli SEO completi con AI: title, meta description, struttura heading e body ottimizzato. Basato sui pattern dei competitor vincenti.",
+  alternates: {
+    canonical: "/funzionalita/generazione-contenuto",
+  },
+  openGraph: {
+    title: "Generazione Contenuti — Verbalist",
+    description: "Genera articoli SEO completi con AI: title, meta description, struttura heading e body ottimizzato. Basato sui pattern dei competitor vincenti.",
+  },
+}
 
 export default function GenerazioneContenutoPage() {
   return (
@@ -9,13 +22,13 @@ export default function GenerazioneContenutoPage() {
       <div className="pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-8">
-            <Link href="/funzionalita" className="text-[14px] text-neutral-500 hover:text-neutral-900 inline-flex items-center gap-2 mb-6">
+            <Link href="/funzionalita" className="text-[14px] text-neutral-500 hover:text-neutral-900 inline-flex items-center gap-2 mb-8 transition-colors">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Torna alle funzionalità
             </Link>
-            <h1 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-4">Generazione Contenuto</h1>
+            <h1 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-neutral-900 mb-4">Generazione Contenuto</h1>
             <p className="text-lg text-neutral-600">
               Genera contenuto completo ottimizzato per SEO, AEO, GEO e AI search basato sui pattern identificati nell'analisi SERP.
             </p>
@@ -23,16 +36,16 @@ export default function GenerazioneContenutoPage() {
 
           <div className="prose prose-neutral max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-4">Cosa fa</h2>
-              <p className="text-[15px] text-neutral-700 leading-relaxed mb-4">
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-4">Cosa fa</h2>
+              <p className="text-base text-neutral-700 leading-relaxed mb-4">
                 Il sistema utilizza l'analisi SERP completata nella fase precedente per generare contenuto completo. 
                 Seleziona automaticamente la strategia migliore in base al tipo di contenuto richiesto (blog post, 
                 landing page, product page, guide) e applica il tone profile configurato.
               </p>
-              <p className="text-[15px] text-neutral-700 leading-relaxed mb-4">
+              <p className="text-base text-neutral-700 leading-relaxed mb-4">
                 La generazione segue i pattern identificati nei top performer:
               </p>
-              <ul className="space-y-2 text-[15px] text-neutral-700 ml-4">
+              <ul className="space-y-2 text-base text-neutral-700 ml-4">
                 <li className="flex items-start gap-2">
                   <span className="text-neutral-400 mt-1">•</span>
                   <span>Crea un outline strutturato basato sulla <em>typical_structure</em> dei competitor vincenti</span>
@@ -57,23 +70,23 @@ export default function GenerazioneContenutoPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-4">Perché è importante</h2>
-              <p className="text-[15px] text-neutral-700 leading-relaxed mb-4">
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-4">Perché è importante</h2>
+              <p className="text-base text-neutral-700 leading-relaxed mb-4">
                 Non basta replicare i competitor: devi superarli. Il sistema genera contenuti che sono più completi, 
                 meglio strutturati e più autorevoli dei competitor esistenti, identificando cosa manca e riempiendo quei gap.
               </p>
-              <p className="text-[15px] text-neutral-700 leading-relaxed">
+              <p className="text-base text-neutral-700 leading-relaxed">
                 Ogni decisione è basata sui dati reali dell'analisi SERP: struttura heading, topic coverage, 
                 word count, segnali di trust. Il risultato è un contenuto progettato per competere nelle prime posizioni.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-medium text-neutral-900 mb-4">Risultato</h2>
-              <p className="text-[15px] text-neutral-700 leading-relaxed mb-4">
+              <h2 className="font-serif text-2xl font-medium tracking-tight text-neutral-900 mb-4">Risultato</h2>
+              <p className="text-base text-neutral-700 leading-relaxed mb-4">
                 Ricevi un contenuto completo pronto per pubblicare con:
               </p>
-              <ul className="space-y-2 text-[15px] text-neutral-700">
+              <ul className="space-y-2 text-base text-neutral-700">
                 <li className="flex items-start gap-2">
                   <span className="text-neutral-400 mt-1">•</span>
                   <span><strong>SEO metadata:</strong> title tag ottimizzato, meta description, slug URL</span>
@@ -99,10 +112,10 @@ export default function GenerazioneContenutoPage() {
 
             <section className="bg-neutral-50 rounded-xl p-6 border border-neutral-200">
               <h3 className="text-lg font-medium text-neutral-900 mb-3">Ottimizzazione SEO, AEO, GEO e AI</h3>
-              <p className="text-[14px] text-neutral-600 mb-3">
+              <p className="text-base text-neutral-600 mb-3">
                 Il contenuto generato è ottimizzato per ogni tipo di ricerca:
               </p>
-              <ul className="space-y-2 text-[14px] text-neutral-600">
+              <ul className="space-y-2 text-base text-neutral-600">
                 <li className="flex items-start gap-2">
                   <span className="text-neutral-400 mt-1">•</span>
                   <span><strong>SEO:</strong> Title tag, meta description, struttura heading per ranking organico</span>

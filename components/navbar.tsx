@@ -99,6 +99,9 @@ export function Navbar() {
             <Link href="/chi-siamo" className="text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
               Chi siamo
             </Link>
+            <Link href="/contatti" className="text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
+              Contatti
+            </Link>
           </div>
 
           <div className="flex items-center gap-6">
